@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlsoSocial | Digital Growth Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0b0b0b;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .accent-text {
+      color: #8b5cf6; /* Vibrant purple gradient accent */
+      background: linear-gradient(135deg, #a78bfa, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(11, 11, 11, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #a1a1aa;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #ffffff;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 180px 0 100px;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero p.subtitle {
+      font-size: 1.25rem;
+      color: #a1a1aa;
+      max-width: 720px;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .btn-primary:hover {
+      background: #e4e4e7;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* What We Do (Services) */
+    .services-section {
+      padding: 100px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .section-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 60px;
+      letter-spacing: -1px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: #141414;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 40px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    .service-card h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .service-card p.description {
+      color: #a1a1aa;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+    }
+
+    .service-card ul li {
+      padding: 8px 0;
+      color: #e4e4e7;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .service-card ul li::before {
+      content: "✓";
+      color: #8b5cf6;
+      font-weight: bold;
+    }
+
+    /* Industries We Work With */
+    .industries-section {
+      padding: 100px 0;
+      background: #0f0f10;
+    }
+
+    .industries-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .industry-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* System Steps Section */
+    .steps-section {
+      padding: 100px 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .step-card {
+      background: #141414;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px;
+      border-radius: 16px;
+    }
+
+    .step-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #8b5cf6;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .step-card p {
+      color: #a1a1aa;
+      font-size: 0.95rem;
+    }
+
+    /* Metrics Section */
+    .metrics-section {
+      padding: 80px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .metric-number {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric-label {
+      color: #a1a1aa;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* About Agency Section */
+    .about-section {
+      padding: 120px 0;
+    }
+
+    .about-content {
+      max-width: 800px;
+    }
+
+    .about-content h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .about-content p {
+      font-size: 1.15rem;
+      color: #a1a1aa;
+      margin-bottom: 20px;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 100px 0;
+      background: #0f0f10;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: #141414;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 32px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      color: #e4e4e7;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8b5cf6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000000;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .footer-copy {
+      color: #71717a;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .about-content h2 {
+        font-size: 2.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Also<span class="accent-text">Social</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="mailto:varun@wealsosocial.com">Contact</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>We Build.<br><span class="accent-text">We Grow.</span><br>We Automate.</h1>
+      <p class="subtitle">
+        Alsosocial helps ambitious businesses grow through social media campaigns, lead generation, creative execution, branding, and AI-powered automation.
+      </p>
+      <div class="hero-buttons">
+        <a href="mailto:varun@wealsosocial.com" class="btn btn-primary">Send Email</a>
+        <a href="#services" class="btn btn-secondary">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2 class="section-title">What We Do!</h2>
+      <div class="services-grid">
+
+        <!-- BUILD -->
+        <div class="service-card">
+          <h3 class="accent-text">BUILD.</h3>
+          <p class="description">We Build Websites that turn visitors into customers.</p>
+          <ul>
+            <li>Website Design</li>
+            <li>Landing Pages</li>
+            <li>Booking Forms</li>
+            <li>Conversion Optimization</li>
+            <li>AI Automations</li>
+          </ul>
+        </div>
+
+        <!-- GROW -->
+        <div class="service-card">
+          <h3 class="accent-text">GROW.</h3>
+          <p class="description">We create Campaigns that reach the right people. Create more opportunities.</p>
+          <ul>
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>Lead Generation</li>
+            <li>Campaign Optimization</li>
+          </ul>
+        </div>
+
+        <!-- AUTOMATE -->
+        <div class="service-card">
+          <h3 class="accent-text">AUTOMATE.</h3>
+          <p class="description">We create Automations that work smarter with AI-powered systems.</p>
+          <ul>
+            <li>AI Chatbots</li>
+            <li>AI Voice Assistants</li>
+            <li>Workflow Automation</li>
+            <li>Email & SMS Follow-ups</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section class="industries-section">
+    <div class="container">
+      <h2 class="section-title"><span class="accent-text">Industries</span> We work with!</h2>
+      <div class="industries-list">
+        <div class="industry-pill">Hospitality & B&Bs</div>
+        <div class="industry-pill">Healthcare & Dental</div>
+        <div class="industry-pill">Local & Home Services</div>
+        <div class="industry-pill">E-commerce & Retail</div>
+        <div class="industry-pill">And Beyond</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps Section -->
+  <section class="steps-section">
+    <div class="container">
+      <h2 class="section-title">Your business doesn't need more noise.<br><span class="accent-text">It needs better systems.</span></h2>
+      <div class="steps-grid">
+
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Attention</h3>
+          <p>Build an online presence that gets noticed.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Conversion</h3>
+          <p>Turn attention into qualified leads.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Automation</h3>
+          <p>Build systems that save time and scale operations.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics / Numbers Section -->
+  <section class="metrics-section">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Our Journey in Numbers</h2>
+      <div class="metrics-grid">
+        <div>
+          <div class="metric-number accent-text">5</div>
+          <div class="metric-label">Years of Experience</div>
+        </div>
+        <div>
+          <div class="metric-number accent-text">2K</div>
+          <div class="metric-label">Trusted Clients</div>
+        </div>
+        <div>
+          <div class="metric-number accent-text">3M</div>
+          <div class="metric-label">Reports Generated</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <h2>We don't just create.<br><span class="accent-text">We build systems.</span></h2>
+        <p>
+          Alsosocial is a digital growth agency focused on helping businesses build stronger online presences, generate more opportunities, and automate the work that slows them down.
+        </p>
+        <p>
+          We combine creative thinking, digital marketing, technology, and automation to create practical systems that businesses can actually use.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">TESTIMONIALS</h2>
+      <p style="color: #a1a1aa; margin-top: -40px; margin-bottom: 40px;">STRAIGHT FROM THE FEED</p>
+      
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <blockquote>"The website brings people in, the ads get us noticed, and the AI handles the repetitive conversations. We can finally focus on running the business instead of constantly managing our marketing."</blockquote>
+          <div class="testimonial-author">Local Business Owner, CA</div>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote>"Alsosocial reworked our campaigns and helped us focus on the audiences that actually matter. Our advertising feels much more purposeful now."</blockquote>
+          <div class="testimonial-author">Business Owner, MN</div>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote>"Alsosocial rebuilt our website and improved our booking experience. Guests can now find what they need quickly, and we've seen a noticeable increase in direct bookings."</blockquote>
+          <div class="testimonial-author">James Sahlew, MN</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="logo">Also<span class="accent-text">Social</span></a>
+        <a href="mailto:varun@wealsosocial.com" class="btn btn-primary">Let's Talk</a>
+      </div>
+      <div class="footer-copy">
+        © Alsosocial. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
